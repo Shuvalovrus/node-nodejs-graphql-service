@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Shuvalovrus/node-nodejs-graphql-service/issues"
   },
-  "homepage": "https://github.com/Shuvalovrus/node-nodejs-graphql-service#readme"
+  "homepage": "https://github.com/Shuvalovrus/node-nodejs-graphql-service#readme",
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-metarhia": "^8.1.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
 }
