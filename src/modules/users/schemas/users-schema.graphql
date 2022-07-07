@@ -1,0 +1,16 @@
+type User {
+  id: ID!
+  firstName: String
+  lastName: String
+  password: String
+  email: String!
+}
+
+type JWT {
+  jwt: String!
+}
+
+type Query {
+  getUser(id: ID) : User
+  getJwt( email:String!, password: String! ) : JWT
+}
