@@ -8,8 +8,6 @@ const server = new ApolloServer({
   dataSources: () => ({
     users: new Users(),
   }),
-  csrfPrevention: true,
-  cache: 'bounded',
 });
 
 // The `listen` method launches a web server.

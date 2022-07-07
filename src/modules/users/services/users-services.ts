@@ -19,6 +19,17 @@ class UsersServices extends RESTDataSource {
       password,
     });
   }
+
+  async registerUser(firstName, lastName, password, email) {
+    const data = await this.post('/register', {
+      firstName,
+      lastName,
+      password,
+      email,
+    });
+    // eslint-disable-next-line no-underscore-dangle
+    return { id: data._id, ...data };
+  }
 }
 
 module.exports = UsersServices;
