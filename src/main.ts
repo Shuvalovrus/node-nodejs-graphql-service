@@ -5,6 +5,7 @@ const Albums = require('./modules/albums/services/albums-services');
 const Artists = require('./modules/artists/services/artists-services');
 const Bands = require('./modules/bands/services/bands-services');
 const Genres = require('./modules/genres/services/genres-services');
+const Tracks = require('./modules/tracks/services/tracks-services');
 
 const server = new ApolloServer({
   typeDefs,
@@ -15,6 +16,7 @@ const server = new ApolloServer({
     artists: new Artists(),
     bands: new Bands(),
     genres: new Genres(),
+    tracks: new Tracks(),
   }),
 });
 
