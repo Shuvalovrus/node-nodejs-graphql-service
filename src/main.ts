@@ -2,6 +2,7 @@ const { ApolloServer } = require('apollo-server');
 const { typeDefs, resolvers } = require('./fileMerged');
 const Users = require('./modules/users/services/users-services');
 const Albums = require('./modules/albums/services/albums-services');
+const Artists = require('./modules/artists/services/artists-services');
 
 const server = new ApolloServer({
   typeDefs,
@@ -9,6 +10,7 @@ const server = new ApolloServer({
   dataSources: () => ({
     users: new Users(),
     albums: new Albums(),
+    artists: new Artists(),
   }),
 });
 
