@@ -3,6 +3,8 @@ const { typeDefs, resolvers } = require('./fileMerged');
 const Users = require('./modules/users/services/users-services');
 const Albums = require('./modules/albums/services/albums-services');
 const Artists = require('./modules/artists/services/artists-services');
+const Bands = require('./modules/bands/services/bands-services');
+const Genres = require('./modules/genres/services/genres-services');
 
 const server = new ApolloServer({
   typeDefs,
@@ -11,6 +13,8 @@ const server = new ApolloServer({
     users: new Users(),
     albums: new Albums(),
     artists: new Artists(),
+    bands: new Bands(),
+    genres: new Genres(),
   }),
 });
 

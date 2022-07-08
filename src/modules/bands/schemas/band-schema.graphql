@@ -1,0 +1,13 @@
+type Band {
+    _id: ID!
+    name: String
+    origin: String
+#    members: [Member]
+    website: String
+    genres: [Genre]
+}
+
+type Query {
+    getBand(id: ID!) : Band
+    getBands: [Band]
+}
