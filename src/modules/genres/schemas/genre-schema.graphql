@@ -1,0 +1,12 @@
+type Genre {
+    _id: ID!
+    name: String
+    description: String
+    country: String
+    year: Int
+}
+
+type Query {
+    getGenre(id: ID!) : Genre
+    getGenres: [Genre]
+}
