@@ -7,6 +7,8 @@ const Bands = require('./modules/bands/services/bands-services');
 const Genres = require('./modules/genres/services/genres-services');
 const Tracks = require('./modules/tracks/services/tracks-services');
 
+const port = process.env.PORT || 4000;
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -21,6 +23,6 @@ const server = new ApolloServer({
 });
 
 // The `listen` method launches a web server.
-server.listen().then(({ url }) => {
+server.listen({ port }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });

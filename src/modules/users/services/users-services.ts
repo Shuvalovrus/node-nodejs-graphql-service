@@ -1,4 +1,5 @@
 require('dotenv').config();
+// @ts-ignore
 const { RESTDataSource } = require('apollo-datasource-rest');
 
 class UsersServices extends RESTDataSource {

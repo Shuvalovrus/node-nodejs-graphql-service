@@ -9,7 +9,7 @@ class TracksServices extends RESTDataSource {
   }
 
   async getTrack(id) {
-    const data = await this.get(`/${id.id}`);
+    const data = await this.get(`/${id}`);
     // eslint-disable-next-line no-underscore-dangle
     return { id: data._id, ...data };
   }

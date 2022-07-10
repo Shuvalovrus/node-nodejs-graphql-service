@@ -1,6 +1,6 @@
 module.exports = {
   Query: {
-    getArtist: (_, args, { dataSources }) => dataSources.artists.getArtist(args),
+    getArtist: (_, { id }, { dataSources }) => dataSources.artists.getArtist(id),
     getArtists: (_, __, { dataSources }) => dataSources.artists.getArtists(),
   },
 };
