@@ -13,3 +13,5 @@ type Query {
     getAlbum(id: ID!) : Album
     getAlbums: [Album]
 }
+
+

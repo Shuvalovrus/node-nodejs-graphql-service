@@ -20,9 +20,13 @@ const server = new ApolloServer({
     genres: new Genres(),
     tracks: new Tracks(),
   }),
+  context: ({ req }) => {
+    const token = req.headers.authorization || '';
+
+    return { token };
+  },
 });
 
-// The `listen` method launches a web server.
 server.listen({ port }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
