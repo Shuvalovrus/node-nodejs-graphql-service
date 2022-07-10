@@ -6,6 +6,7 @@ const Artists = require('./modules/artists/services/artists-services');
 const Bands = require('./modules/bands/services/bands-services');
 const Genres = require('./modules/genres/services/genres-services');
 const Tracks = require('./modules/tracks/services/tracks-services');
+const Favourites = require('./modules/favourites/services/favourites-services');
 
 const port = process.env.PORT || 4000;
 
@@ -19,6 +20,7 @@ const server = new ApolloServer({
     bands: new Bands(),
     genres: new Genres(),
     tracks: new Tracks(),
+    favourites: new Favourites(),
   }),
   context: ({ req }) => {
     const token = req.headers.authorization || '';
