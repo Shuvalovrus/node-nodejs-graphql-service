@@ -1,6 +1,6 @@
 module.exports = {
   Query: {
-    getBand: (_, { id }, { dataSources }) => dataSources.bands.getBand(id),
+    getBand: (_, { _id }, { dataSources }) => dataSources.bands.getBand(_id),
     getBands: (_, __, { dataSources }) => dataSources.bands.getBands(),
   },
   Mutation: {
