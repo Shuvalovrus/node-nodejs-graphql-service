@@ -8,6 +8,10 @@ class TracksServices extends RESTDataSource {
     this.baseURL = process.env.TRACKS_URL;
   }
 
+  willSendRequest(request) {
+    request.headers.set('Authorization', this.context.token);
+  }
+
   async getTrack(id) {
     const data = await this.get(`/${id}`);
     // eslint-disable-next-line no-underscore-dangle
@@ -17,6 +21,19 @@ class TracksServices extends RESTDataSource {
   async getTracks() {
     const data = await this.get('');
     return data.items;
+  }
+
+  async createTrack(data) {
+    return this.post('', data.data);
+  }
+
+  async deleteTrack(id) {
+    return this.delete(`/${id}`);
+  }
+
+  async updateTrack(data) {
+    // eslint-disable-next-line no-underscore-dangle
+    return this.put(`/${data.data._id}`, { ...data.data });
   }
 }
 

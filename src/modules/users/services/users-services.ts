@@ -8,7 +8,7 @@ class UsersServices extends RESTDataSource {
     this.baseURL = process.env.USERS_URL;
   }
 
-  async getUser(id: any) {
+  async getUser(id) {
     const data = await this.get(`/${id.id}`);
     // eslint-disable-next-line no-underscore-dangle
     return { id: data._id, ...data };
