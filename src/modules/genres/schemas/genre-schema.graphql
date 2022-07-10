@@ -7,7 +7,7 @@ type Genre {
 }
 
 type Query {
-    getGenre(id: ID!) : Genre
+    getGenre(_id: ID!) : Genre
     getGenres: [Genre]
 }
 

@@ -1,6 +1,6 @@
 module.exports = {
   Query: {
-    getGenre: (_, { id }, { dataSources }) => dataSources.genres.getGenre(id),
+    getGenre: (_, { _id }, { dataSources }) => dataSources.genres.getGenre(_id),
     getGenres: (_, __, { dataSources }) => dataSources.genres.getGenres(),
   },
   Mutation: {
