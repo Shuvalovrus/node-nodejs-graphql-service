@@ -1,5 +1,5 @@
 const { ApolloServer } = require('apollo-server');
-const { typeDefs, resolvers } = require('./fileMerged');
+const { typeDefs, resolvers } = require('./FileMerger');
 const Users = require('./modules/users/services/users-services');
 const Albums = require('./modules/albums/services/albums-services');
 const Artists = require('./modules/artists/services/artists-services');
