@@ -8,15 +8,30 @@ class BandsServices extends RESTDataSource {
     this.baseURL = process.env.BANDS_URL;
   }
 
+  willSendRequest(request) {
+    request.headers.set('Authorization', this.context.token);
+  }
+
   async getBand(id) {
-    const data = await this.get(`/${id.id}`);
-    // eslint-disable-next-line no-underscore-dangle
-    return { id: data._id, ...data };
+    return this.get(`/${id}`);
   }
 
   async getBands() {
     const data = await this.get('');
     return data.items;
+  }
+
+  async createBand(data) {
+    return this.post('', data.data);
+  }
+
+  async deleteBand(id) {
+    return this.delete(`/${id}`);
+  }
+
+  async updateBand(data) {
+    // eslint-disable-next-line no-underscore-dangle
+    return this.put(`/${data.data._id}`, { ...data.data });
   }
 }
 

@@ -1,11 +1,14 @@
 module.exports = {
   Query: {
-    getBand: (_, args, { dataSources }) => dataSources.bands.getBand(args),
+    getBand: (_, { id }, { dataSources }) => dataSources.bands.getBand(id),
     getBands: (_, __, { dataSources }) => dataSources.bands.getBands(),
   },
+  Mutation: {
+    createBand: (_, data, { dataSources }) => dataSources.bands.createBand(data),
+    deleteBand: (_, { id }, { dataSources }) => dataSources.bands.deleteBand(id),
+    updateBand: (_, data, { dataSources }) => dataSources.bands.updateBand(data),
+  },
   Band: {
-    genres: ({ genresIds }, __, { dataSources }) => genresIds.map((id) => {
-      return dataSources.genres.getGenre(id);
-    }),
+    genres: ({ genresIds }, __, { dataSources }) => genresIds.map((id) => dataSources.genres.getGenre(id)),
   },
 };
