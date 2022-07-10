@@ -8,15 +8,30 @@ class AlbumsServices extends RESTDataSource {
     this.baseURL = process.env.ALBUMS_URL;
   }
 
+  willSendRequest(request) {
+    request.headers.set('Authorization', this.context.token);
+  }
+
   async getAlbum(id) {
-    const data = await this.get(`/${id.id}`);
-    // eslint-disable-next-line no-underscore-dangle
-    return { id: data._id, ...data };
+    return this.get(`/${id}`);
   }
 
   async getAlbums() {
     const data = await this.get('');
     return data.items;
+  }
+
+  async createAlbum(data) {
+    return this.post('', data.data);
+  }
+
+  async deleteAlbum(id) {
+    return this.delete(`/${id}`);
+  }
+
+  async updateAlbum(data) {
+    // eslint-disable-next-line no-underscore-dangle
+    return this.put(`/${data.data._id}`, { ...data.data });
   }
 }
 
